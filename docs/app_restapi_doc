@@ -1,0 +1,95 @@
+
+
+
+Get device list 
+	URL 		- /device/
+	Method 		- GET
+	Response 	- [
+					{
+						"id": 7,
+						"device_id": "TL01",
+						"device_name": "Light01",
+						"device_status": "Off",
+						"device_operation": {
+							"opertaions": [
+								"On",
+								"Off"
+							]
+						}
+					}
+                  ]
+	
+Add device
+	URL 		- /device/
+	Method 		- GET
+	Request		- {
+					"device_id": "TL01",
+					"device_name": "Light01",
+					"device_operation": ["On", "Off"]
+				  }
+	Response 	- {
+					"id": 7,
+					"device_id": "TL01",
+					"device_name": "Light01",
+					"device_status": "Off",
+					"device_operation": {
+						"opertaions": [
+							"On",
+							"Off"
+						]
+					}
+				  }
+
+Delete all device
+    URL 		- /device/<device_id>
+	Method 		- DELETE
+	Response 	- "All Device deleted successfully"
+
+	
+Delete a device
+	URL 		- /device/<device_id>
+	Method 		- DELETE
+	Response 	- "Device deleted successfully"
+	
+	
+Update a device
+	URL 		- /device/<device_id>
+	Method 		- GET
+	Request		- {
+					"device_id": "TL01",
+					"device_name": "Light01",
+					"device_operation": ["PoweredOn", "PoweredOff"]
+				  }
+	Response 	- {
+					"id": 7,
+					"device_id": "TL01",
+					"device_name": "Light01",
+					"device_status": "None",
+					"device_operation": {
+						"opertaions": [
+							"PoweredOn",
+							"PoweredOff"
+						]
+					}
+				  }
+
+Update a device status
+	URL 		- /device/<device_id>
+	Method 		- PUT
+	Request		- {
+					"device_id": "TL01",
+					"device_status": "PoweredOff"
+				  }
+	Response 	- {
+					"id": 7,
+					"device_id": "TL01",
+					"device_name": "Light01",
+					"device_status": "PoweredOff",
+					"device_operation": {
+						"opertaions": [
+							"PoweredOn",
+							"PoweredOff"
+						]
+					}
+				  }
+

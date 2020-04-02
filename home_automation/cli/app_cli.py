@@ -19,11 +19,10 @@ parser.add_argument('-v', '--version', action='version', version='Home Automatio
 automation_parsers = parser.add_subparsers(title='Home Automation Services', dest='service', help='Home Automation Services; E.g.: "Add_device" "Operate_device"')
 
 # Get device list
-get_device_parser = automation_parsers.add_parser('get_device', help='Get smart device list', add_help=False)
-get_device_args_grp = get_device_parser.add_argument_group('Get available smart device list')
+get_device_parser = automation_parsers.add_parser('get_device', help='Get all smart device list', add_help=False)
 
 # Add new device
-add_device_parser = automation_parsers.add_parser('add_device', help='Add new smart to application', add_help=False)
+add_device_parser = automation_parsers.add_parser('add_device', help='Add a new smart device to application', add_help=False)
 add_device_args_grp = add_device_parser.add_argument_group('Add new smart device')
 add_device_args = list()
 add_device_args.append(add_device_args_grp.add_argument('-id', '--device_id', required=True, type=str, help="Your smart device id"))
@@ -35,6 +34,9 @@ usage = add_device_parser.format_usage()
 add_device_parser.usage=usage
 for a in add_device_args:
     a.metavar = ''
+
+#Delete all available device
+delete_all_device_parser = automation_parsers.add_parser('delete_all_device', help='Delete all available home smart device details', add_help=False)
 
 # Update a device
 update_device_parser = automation_parsers.add_parser('update_device', help='Update a existing smart device', add_help=False)
@@ -62,7 +64,7 @@ for a in delete_device_args:
     a.metavar = ''
 
 # Update a device status
-update_status_parser = automation_parsers.add_parser('update_status', help='Update a existing smart device', add_help=False)
+update_status_parser = automation_parsers.add_parser('update_status', help='Update a existing smart device status', add_help=False)
 update_status_args_grp = update_status_parser.add_argument_group('Update existing smart device')
 update_status_args = list()
 update_status_args.append(update_status_args_grp.add_argument('-id', '--device_id', required=True, type=str, help="Your smart device id"))

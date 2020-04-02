@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "device_id": "TL01",
+    "device_name": "Light01",
+    "device_status": "Nil",
+    "device_operation": [
+      "PoweredOn",
+      "PoweredOff"
+    ]
+  },
+  {
+    "id": 2,
+    "device_id": "TL02",
+    "device_name": "Light02",
+    "device_status": "Nil",
+    "device_operation": [
+      "PoweredOn",
+      "PoweredOff"
+    ]
+  },
+  {
+    "id": 3,
+    "device_id": "ST02",
+    "device_name": "SmartTV01",
+    "device_status": "Nil",
+    "device_operation": [
+      "PoweredOn",
+      "PoweredOff",
+      "TvOn",
+      "TvOff"
+    ]
+  },
+  {
+    "id": 4,
+    "device_id": "DL01",
+    "device_name": "DoorLock01",
+    "device_status": "Nil",
+    "device_operation": [
+      "PoweredOn",
+      "PoweredOff",
+      "Lock",
+      "Unlock"
+    ]
+  }
+]

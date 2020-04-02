@@ -1,0 +1,96 @@
+Home Automation CLI tool
+------------------------
+
+	Available list of operations
+	1. get_device          Get all smart device list
+    2. add_device          Add a new smart device to application
+    3. delete_all_device   Delete all available home smart device details
+    4. update_device       Update a existing smart device
+    5. delete_device       Delete a available home smart device
+    6. update_status       Update a existing smart device status
+
+    get_device
+    ----------
+    cmd - app_cli.py get_device
+
+    Response -[
+                {
+                  "device_id": "TL02",
+                  "device_name": "Light02",
+                  "device_operation": {
+                  "operations": [
+                    "On",
+                    "Off"
+                    ]
+                  },
+                  "device_status": "Off",
+                  "id": 10
+                }
+              ]
+
+    add_device
+    ----------
+    cmd - app_cli.py add_device -id TL02 -n Light02 -o On Off
+        - app_cli.py add_device --device_id TL02 --device_name Light02 --device_operations On Off
+
+    Resonse - {
+                  "device_id": "TL01",
+                  "device_name": "Light01",
+                  "device_operation": {
+                    "operations": [
+                      "On",
+                      "Off"
+                    ]
+                  },
+                  "device_status": "Off",
+                  "id": 12
+                }
+
+    delete_all_device
+    -----------------
+    cmd - app_cli.py delete_all_device
+
+    response - "All Device deleted succesfully"
+
+    update_device
+    -------------
+    cmd - app_cli.py update_device -id TL02 -n Light02 -o PoweredOn PoweredOff
+        - app_cli.py update_device -device_id TL02 -device_name Light02 -device_operations PoweredOn PoweredOff
+
+    Response - {
+                  "device_id": "TL02",
+                  "device_name": "Light02",
+                  "device_operation": {
+                    "operations": [
+                      "PoweredOn",
+                      "PoweredOff"
+                    ]
+                  },
+                  "device_status": "Off",
+                  "id": 10
+                }
+
+    delete_device
+    -------------
+    cmd - app_cli.py delete_device -id TL01
+        - app_cli.py delete_device --device_id TL01
+
+    Response - "Device deleted successfully"
+
+    Update_status
+    -------------
+    cmd - app_cli.py update_status -id TL02 -s PoweredOff
+        - app_cli.py update_status -device_id TL02 -status PoweredOff
+
+    Response - {
+                  "device_id": "TL02",
+                  "device_name": "Light02",
+                  "device_operation": {
+                    "operations": [
+                      "PoweredOn",
+                      "PoweredOff"
+                    ]
+                  },
+                  "device_status": "PoweredOff",
+                  "id": 10
+                }

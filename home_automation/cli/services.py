@@ -13,6 +13,8 @@ class AutomationRequestHandler():
             self.get_device()
         elif service == "add_device":
             self.add_device()
+        elif service == "delete_all_device":
+            self.delete_all_device()
         elif service == 'delete_device':
             self.delete_device()
         elif service == 'update_device':
@@ -23,11 +25,16 @@ class AutomationRequestHandler():
     def add_device(self):
         url = BASE_URL + "/device/"
         result = requests.post(url=url, data=json.dumps(self._app_data), headers=HEADER)
-        print(result.text)
+        print(json.dumps(json.loads(result.text), indent=2, sort_keys=True))
 
     def get_device(self):
         url = BASE_URL + "/device/"
         result = requests.get(url=url, headers=HEADER)
+        print(json.dumps(json.loads(result.text), indent=2, sort_keys=True))
+
+    def delete_all_device(self):
+        url = BASE_URL + "/device/"
+        result = requests.delete(url=url)
         print(result.text)
 
     def delete_device(self):
@@ -37,14 +44,13 @@ class AutomationRequestHandler():
 
     def update_device(self):
         url = BASE_URL + "/device/" + self._app_data['device_id']
-        print(url)
         result = requests.put(url=url, data=json.dumps(self._app_data), headers=HEADER)
-        print(result.text)
+        print(json.dumps(json.loads(result.text), indent=2, sort_keys=True))
 
     def upate_status(self):
         url = BASE_URL + "/device/status/" + self._app_data['device_id']
         result = requests.put(url=url, data=json.dumps(self._app_data), headers=HEADER)
-        print(result.text)
+        print(json.dumps(json.loads(result.text), indent=2, sort_keys=True))
 
 
 
