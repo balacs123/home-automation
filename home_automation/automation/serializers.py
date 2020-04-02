@@ -13,4 +13,4 @@ class DeviceSerializer(serializers.Serializer):
 class DevicePostSerializer(serializers.Serializer):
     device_id = serializers.CharField()
     device_name = serializers.CharField()
-    device_operation = serializers.DictField()
+    device_operation = serializers.ListField()

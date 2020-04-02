@@ -26,6 +26,7 @@ SECRET_KEY = '&_i5eb24um9dm!#xmc-ns)yzx=sgps9^i=w9d3#x@4_z#2d4a+'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+APPEND_SLASH=False
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'automation',
 ]
 
